@@ -1,0 +1,35 @@
+{
+  "name": "pvAddValues",
+  "version": "0.0.1",
+  "description": "Adds values from CSV to MongoDB",
+  "author": "Sabine Jakubinek",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "start": "node --env-file=.env --loader ts-node/esm ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "9.x",
+    "prettier": "3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "husky": "^9.1.4",
+    "mongodb": "^6.8.0",
+    "ts-node": "^10.9.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
